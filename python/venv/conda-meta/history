@@ -33,3 +33,46 @@
 +defaults/noarch::pip-26.2.1-pyhc872135_0
 +defaults/noarch::tzdata-2026c-he532380_0
 # update specs: ['python=3.12']
+==> 2026-09-10 19:07:28 <==
+# cmd: /home/rest/Downloads/yes/condabin/conda install -c conda-forge --prefix /home/rest/Desktop/AI/python/venv ipykernel -y
+# conda version: 26.7.1
+-defaults/linux-64::openssl-3.5.8-h1b28b03_0
++conda-forge/linux-64::debugpy-1.8.21-py312h80505a6_1
++conda-forge/linux-64::keyutils-1.6.3-h7cc23a3_1
++conda-forge/linux-64::krb5-1.22.2-hbc21106_2
++conda-forge/linux-64::libedit-3.1.20250104-pl5321h373387f_1
++conda-forge/linux-64::libsodium-1.0.22-hebe6cf0_2
++conda-forge/linux-64::openssl-3.6.4-h781a0a9_0
++conda-forge/linux-64::psutil-7.2.2-py312h1b36aeb_2
++conda-forge/linux-64::pyzmq-27.2.0-py312h8a5ba0d_0
++conda-forge/linux-64::tornado-6.5.8-py312h5cc1888_1
++conda-forge/linux-64::zeromq-4.3.5-h09e67af_11
++conda-forge/noarch::_python_abi3_support-1.0-hd8ed1ab_3
++conda-forge/noarch::asttokens-3.0.2-pyhd8ed1ab_0
++conda-forge/noarch::comm-0.2.3-pyhe01879c_0
++conda-forge/noarch::cpython-3.12.14-py312hd8ed1ab_3
++conda-forge/noarch::executing-2.2.1-pyhd8ed1ab_0
++conda-forge/noarch::ipykernel-7.3.0-pyha191276_0
++conda-forge/noarch::ipython-9.17.1-pyh53cf698_0
++conda-forge/noarch::ipython_pygments_lexers-1.1.1-pyhd8ed1ab_0
++conda-forge/noarch::jedi-0.20.0-pyhcf101f3_0
++conda-forge/noarch::jupyter_client-8.10.0-pyhcf101f3_0
++conda-forge/noarch::jupyter_core-5.9.1-pyhc90fa1f_0
++conda-forge/noarch::matplotlib-inline-0.2.2-pyhd8ed1ab_0
++conda-forge/noarch::nest-asyncio2-1.7.2-pyhcf101f3_0
++conda-forge/noarch::parso-0.8.7-pyhcf101f3_0
++conda-forge/noarch::pexpect-4.9.0-pyhd8ed1ab_1
++conda-forge/noarch::platformdirs-4.11.8-pyh5ded981_0
++conda-forge/noarch::prompt-toolkit-3.0.53-pyha770c72_0
++conda-forge/noarch::ptyprocess-0.7.0-pyhd8ed1ab_1
++conda-forge/noarch::pure_eval-0.2.3-pyhd8ed1ab_1
++conda-forge/noarch::pygments-2.21.0-pyhcf101f3_0
++conda-forge/noarch::python-dateutil-2.9.0.post0-pyhe01879c_2
++conda-forge/noarch::python-gil-3.12.14-hd8ed1ab_3
++conda-forge/noarch::six-1.17.0-pyhe01879c_1
++conda-forge/noarch::stack_data-0.6.3-pyhd8ed1ab_1
++conda-forge/noarch::traitlets-5.16.1-pyhcf101f3_0
++conda-forge/noarch::typing_extensions-4.16.0-pyhcf101f3_0
++conda-forge/noarch::wcwidth-0.8.3-pyhcf101f3_0
++defaults/linux-64::python_abi-3.12-4_cp312
+# update specs: ['ipykernel']
