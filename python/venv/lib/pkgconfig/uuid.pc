@@ -1,0 +1,11 @@
+prefix=/home/rest/Desktop/AI/python/venv
+exec_prefix=/home/rest/Desktop/AI/python/venv
+libdir=/home/rest/Desktop/AI/python/venv/lib
+includedir=/home/rest/Desktop/AI/python/venv/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid
