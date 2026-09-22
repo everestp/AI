@@ -37,3 +37,4 @@ faiss-cpu
 tiktoken
 
 langgraph
+pydantic
