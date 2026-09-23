@@ -38,3 +38,4 @@ tiktoken
 
 langgraph
 pydantic
+streamlit
