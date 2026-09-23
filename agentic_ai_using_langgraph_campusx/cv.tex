@@ -1,0 +1,145 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Tighter page margins to fit everything onto one page
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.85in}
+\addtolength{\textheight}{1.7in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Reduced spacing before and after sections
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\large #1} & \textbf{\small #2} \\
+    \textit{\large #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}\vspace{-2pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+{\Huge \scshape Everest Paudel} \\ \vspace{3pt}
+\small Backend Engineer (Go \& Node.js) \\ \vspace{3pt}
+\small Kathmandu, Nepal \\ \vspace{3pt}
+\href{tel:+9779828722827}{\faPhone\ +977-9828722827} $|$
+\href{mailto:everest@paudel.dev}{\faEnvelope\ paudeleverest09@gmail.com} $|$
+\href{https://paudel.dev}{\faGlobe\ paudel.dev} $|$
+\href{https://linkedin.com/in/everestp}{\faLinkedin\ linkedin.com/in/everestp} $|$
+\href{https://github.com/everestp}{\faGithub\ github.com/everestp}
+\end{center}
+
+%-----------SKILLS-----------
+\section{TECHNICAL SKILLS}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Languages:} \textbf{Go (Golang)}, \textbf{TypeScript}, \textbf{Rust}, JavaScript, SQL\\
+\textbf{Frontend:} \textbf{React}, \textbf{Next.js}, HTML/CSS, Tailwind CSS \\
+\textbf{Backend \& APIs:} \textbf{Golang}, \textbf{NestJS}, \textbf{ExpressJS}, \textbf{REST APIs}, \textbf{gRPC}, \textbf{WebSockets}, \textbf{Microservices}, \textbf{RabbitMQ}\\
+\textbf{Databases \& BaaS:} \textbf{PostgreSQL}, \textbf{Redis}, \textbf{MongoDB}, \textbf{Appwrite} \\
+\textbf{Cloud \& DevOps:} \textbf{Docker}, \textbf{Jenkins}, \textbf{Kubernetes}, \textbf{AWS}, Git \\
+\textbf{Security \& Testing:}  \textbf{OWASP Top 10}, \textbf{Burp Suite}
+}}
+\end{itemize}
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+\resumeSubHeadingListStart
+
+%---------------- DEPING ----------------
+\resumeProjectHeading
+{\href{https://deping.xyz}{\textbf{\large{\underline{DePing.xyz}}}} $|$
+\large{\underline{\textbf{Golang}, \textbf{Rust}, \textbf{gRPC}, \textbf{RabbitMQ}, \textbf{Redis}, \textbf{PostgreSQL}, \textbf{Solana}}}}{2026}
+\resumeItemListStart
+\resumeItem{Built a scalable \textbf{microservices} backend in \textbf{Go} to manage distributed uptime monitoring across \textbf{Rust} edge worker nodes.}
+\resumeItem{Engineered a high-throughput pipeline utilizing \textbf{Redis} scheduling, \textbf{RabbitMQ} queues, and bidirectional \textbf{gRPC} telemetry streams.}
+\resumeItem{Developed an advanced anti-cheat engine and a \textbf{Two-Packet} state machine to eliminate false alarms and power real-time \textbf{Telegram} alerts.}
+\resumeItem{Integrated \textbf{Solana Anchor} smart contracts to automate \textbf{SPL token} reward distribution and on-chain consensus validation.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\href{https://kipay.xyz}{\textbf{\large{\underline{Kipay.xyz}}}} $|$
+\large{\underline{\textbf{Crypto Payment Gateway}, \textbf{Golang}, \textbf{Rust}, \textbf{gRPC}, \textbf{React.js}, \textbf{PostgreSQL}}}}{2026}
+\resumeItemListStart
+\resumeItem{Engineered a high-performance \textbf{crypto payment gateway} backend in \textbf{Go} using a \textbf{modular monolith} and native \textbf{net/http} for low-latency request routing.}
+\resumeItem{Developed a \textbf{Rust multi-currency verification engine} communicating with the Go backend via bidirectional \textbf{gRPC} streams for secure cryptographic transaction validation.}
+\resumeItem{Built an end-to-end \textbf{React} frontend featuring secure authentication, merchant admin controls, custom payment link generators, and stripe-grade hosted client checkouts.}
+\resumeItem{Designed structured \textbf{PostgreSQL} schemas powering settlement engines, \textbf{signed webhooks}, and real-time transaction state tracking.}
+\resumeItemListEnd
+
+%---------------- BREEZO ----------------
+\resumeProjectHeading
+{\href{https://www.breezonetwork.xyz}{\textbf{\large{\underline{BREEZO Network}}}} $|$
+\large{\underline{\textbf{Node.js}, \textbf{MongoDB}, \textbf{Socket.IO}, \textbf{ESP32 IoT}, \textbf{Solana}}}}{2026}
+\resumeItemListStart
+\resumeItem{Served as a founding engineer, architecting the decentralized AQI monitoring backend to ingest real-time telemetry from \textbf{ESP32} IoT sensors.}
+\resumeItem{Implemented low-latency \textbf{Socket.IO} streaming delivering sub-second sensor updates directly to dashboard clients.}
+\resumeItem{Secured IoT communication protocols using \textbf{NaCl cryptography} and strict replay protection to prevent unauthorized data injection.}
+\resumeItem{Deployed \textbf{Solana Anchor} smart contracts to manage decentralized node registration, automated \textbf{SPL token} rewards, and access control.}
+\resumeItemListEnd
+
+%---------------- NID ----------------
+\resumeProjectHeading
+{\href{https://nid.xyz}{\textbf{\large{\underline{NID.xyz}}}} $|$
+\large{\underline{\textbf{Golang}, \textbf{React}, \textbf{TypeScript}, \textbf{OAuth 2.0}, \textbf{OIDC}, \textbf{PostgreSQL}, \textbf{Solana}}}}{2026}
+\resumeItemListStart
+\resumeItem{Built a scalable \textbf{identity provider} in \textbf{Go} enabling handle-based authentication across connected applications.}
+\resumeItem{Engineered a secure authentication flow utilizing \textbf{OAuth 2.0}, \textbf{OpenID Connect}, and \textbf{PKCE} for application authorization.}
+\resumeItem{Developed \textbf{.nid handle} claiming and resolution with wallet-based ownership verification across \textbf{EVM} and \textbf{Solana}.}
+\resumeItem{Implemented centralized \textbf{session management} allowing users to manage connected applications and revoke active sessions from the dashboard.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Institute of Science and Technology, TU}{2023 -- 2027}
+{B.Sc. CSIT}{Kathmandu, Nepal}
+\resumeSubheading
+{Bluebird College}{2020 -- 2022}
+{+2 Science}{Kathmandu, Nepal}
+\resumeSubHeadingListEnd
+
+\end{document}
