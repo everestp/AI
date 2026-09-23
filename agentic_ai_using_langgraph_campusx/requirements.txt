@@ -39,3 +39,4 @@ tiktoken
 langgraph
 pydantic
 streamlit
+langgraph-checkpoint-sqlite
