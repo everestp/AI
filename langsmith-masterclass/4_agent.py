@@ -1,52 +1,146 @@
+import os
+import requests
+
+from dotenv import load_dotenv
+
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import tool
-import requests
 from langchain_community.tools import DuckDuckGoSearchRun
-from langchain.agents import create_react_agent, AgentExecutor
-from langchain import hub
-from dotenv import load_dotenv
+from langchain.agents import create_agent
+
+
+# ============================================================
+# 1. Load environment variables
+# ============================================================
 
 load_dotenv()
 
+os.environ["LANGCHAIN_PROJECT"] = "ReAct Agent"
+
+
+# ============================================================
+# 2. Search tool
+# ============================================================
+
 search_tool = DuckDuckGoSearchRun()
+
+
+# ============================================================
+# 3. Weather tool
+# ============================================================
 
 @tool
 def get_weather_data(city: str) -> str:
-  """
-  This function fetches the current weather data for a given city
-  """
-  url = f'https://api.weatherstack.com/current?access_key=f07d9636974c4120025fadf60678771b&query={city}'
+    """
+    Fetch the current weather data for a given city.
+    """
 
-  response = requests.get(url)
+    api_key = os.getenv("WEATHERSTACK_API_KEY")
 
-  return response.json()
+    if not api_key:
+        return "WEATHERSTACK_API_KEY is not configured."
 
-llm = ChatOpenAI()
+    url = "https://api.weatherstack.com/current"
 
-# Step 2: Pull the ReAct prompt from LangChain Hub
-prompt = hub.pull("hwchase17/react")  # pulls the standard ReAct agent prompt
+    params = {
+        "access_key": api_key,
+        "query": city,
+    }
 
-# Step 3: Create the ReAct agent manually with the pulled prompt
-agent = create_react_agent(
-    llm=llm,
-    tools=[search_tool, get_weather_data],
-    prompt=prompt
+    try:
+        response = requests.get(
+            url,
+            params=params,
+            timeout=10
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        if "error" in data:
+            return f"Weather API error: {data['error']}"
+
+        current = data.get("current", {})
+
+        location = data.get("location", {})
+
+        return (
+            f"City: {location.get('name', city)}\n"
+            f"Country: {location.get('country', 'Unknown')}\n"
+            f"Temperature: {current.get('temperature', 'Unknown')}°C\n"
+            f"Feels like: {current.get('feelslike', 'Unknown')}°C\n"
+            f"Weather: {current.get('weather_descriptions', ['Unknown'])[0]}\n"
+            f"Humidity: {current.get('humidity', 'Unknown')}%\n"
+            f"Wind speed: {current.get('wind_speed', 'Unknown')} km/h"
+        )
+
+    except requests.RequestException as e:
+        return f"Failed to fetch weather data: {e}"
+
+
+# ============================================================
+# 4. Create LLM
+# ============================================================
+
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
 )
 
-# Step 4: Wrap it with AgentExecutor
-agent_executor = AgentExecutor(
-    agent=agent,
-    tools=[search_tool, get_weather_data],
-    verbose=True,
-    max_iterations=5
+
+# ============================================================
+# 5. Tools
+# ============================================================
+
+tools = [
+    search_tool,
+    get_weather_data,
+]
+
+
+# ============================================================
+# 6. Create agent
+# ============================================================
+
+agent = create_agent(
+    model=llm,
+    tools=tools,
+    system_prompt=(
+        "You are a helpful research assistant. "
+        "Use the web search tool when you need current or "
+        "unknown information. "
+        "Use the weather tool when the user asks for current "
+        "weather or temperature. "
+        "Do not guess information when a tool can provide it."
+    ),
 )
 
-# What is the release date of Dhadak 2?
-# What is the current temp of gurgaon
-# Identify the birthplace city of Kalpana Chawla (search) and give its current temperature.
 
-# Step 5: Invoke
-response = agent_executor.invoke({"input": "What is the current temp of gurgaon"})
-print(response)
+# ============================================================
+# 7. Run the agent
+# ============================================================
 
-print(response['output'])
+question = "What is the current temperature of Gurgaon?"
+
+response = agent.invoke(
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": question,
+            }
+        ]
+    }
+)
+
+
+# ============================================================
+# 8. Print response
+# ============================================================
+
+print("\n==============================")
+print("AGENT RESPONSE")
+print("==============================\n")
+
+print(response["messages"][-1].content)
