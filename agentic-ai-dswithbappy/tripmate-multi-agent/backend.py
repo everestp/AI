@@ -52,7 +52,7 @@ if not GROQ_API_KEY:
 # =========================
 
 llm = ChatGroq(
-    model="openai/gpt-oss-120b",
+    model="llama-3.3-70b-versatile",
     api_key=GROQ_API_KEY
 )
 
@@ -103,6 +103,8 @@ def hotel_agent(state: TravelState):
         ],
         "llm_calls": state.get("llm_calls", 0) + 1
     }
+
+
 
 
 # =========================
