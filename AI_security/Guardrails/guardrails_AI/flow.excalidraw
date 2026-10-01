@@ -1,0 +1,78 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "t5rd6MHzVrOX_hqnAX1UA",
+      "type": "freedraw",
+      "x": 648.7333984375,
+      "y": 123.55616760253906,
+      "width": 10.4224853515625,
+      "height": 1.6644439697265625,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": null,
+      "seed": 672286332,
+      "version": 8,
+      "versionNonce": 858597500,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1790846073909,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.6143798828125,
+          0.11499786376953125
+        ],
+        [
+          4.9993896484375,
+          0.11499786376953125
+        ],
+        [
+          8.0982666015625,
+          1.6644439697265625
+        ],
+        [
+          9.64776611328125,
+          1.6644439697265625
+        ],
+        [
+          10.4224853515625,
+          1.6644439697265625
+        ],
+        [
+          10.4224853515625,
+          1.6644439697265625
+        ]
+      ],
+      "pressures": [],
+      "simulatePressure": true,
+      "lastCommittedPoint": [
+        10.4224853515625,
+        1.6644439697265625
+      ]
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
